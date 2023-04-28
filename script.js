@@ -119,6 +119,9 @@ for (let i = 0; i < firstLineArray.length; i++) {
     if (firstLineArray[i].addContent) {
         keyS.innerHTML = firstLineArray[i].addContent;
     }
+    if (firstLineArray[i].addClass) {
+        key.classList.add("keyboard__line__key_dark")
+    }
     key.append(keyS);
 
     document.querySelector(".keyboard__line_1").append(key);
@@ -211,6 +214,9 @@ for (let i = 0; i < secondLineArray.length; i++) {
     if (secondLineArray[i].addContent) {
         keyS.innerHTML = secondLineArray[i].addContent;
     }
+    if (secondLineArray[i].addClass) {
+        key.classList.add("keyboard__line__key_dark")
+    }
     key.append(keyS);
 
     document.querySelector(".keyboard__line_2").append(key);
@@ -279,6 +285,7 @@ let thirdLineArray = [
 
     button13 = {
         content: "ENTER",
+        addClass: "darker"
     },
 ];
 
@@ -291,6 +298,9 @@ for (let i = 0; i < thirdLineArray.length; i++) {
     keyS.className = "keyboard__line__key_second";
     if (thirdLineArray[i].addContent) {
         keyS.innerHTML = thirdLineArray[i].addContent;
+    }
+    if (thirdLineArray[i].addClass) {
+        key.classList.add("keyboard__line__key_dark")
     }
     key.append(keyS);
 
@@ -365,6 +375,7 @@ let fourthLineArray = [
 
     button14 = {
         content: "Shift",
+        addClass: "darker"
     },
 ];
 
@@ -377,6 +388,9 @@ for (let i = 0; i < fourthLineArray.length; i++) {
     keyS.className = "keyboard__line__key_second";
     if (fourthLineArray[i].addContent) {
         keyS.innerHTML = fourthLineArray[i].addContent;
+    }
+    if (fourthLineArray[i].addClass) {
+        key.classList.add("keyboard__line__key_dark")
     }
     key.append(keyS);
 
@@ -438,6 +452,9 @@ for (let i = 0; i < fifthLineArray.length; i++) {
     keyS.className = "keyboard__line__key_second";
     if (fifthLineArray[i].addContent) {
         keyS.innerHTML = fifthLineArray[i].addContent;
+    }
+    if (fifthLineArray[i].addClass) {
+        key.classList.add("keyboard__line__key_dark")
     }
     key.append(keyS);
 
