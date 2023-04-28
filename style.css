@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.textarea {
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    margin-top: 50px;
+    width: 800px;
+}
+
+.keyboard {
+    display: flex;
+    width: 1240px;
+    gap: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.keyboard__line__key {
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.keyboard__line__key_second {
+    position: absolute;
+    top: 2px;
+    left: 4px;
+}
+
+.keyboard__line {
+    flex-grow: 1;
+    gap: 10px;
+}
+
+.keyboard__line_1 {
+    display: grid;
+    grid-template-columns: 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 1fr;
+    grid-template-rows: 70px;
+}
+
+.keyboard__line_2 {
+    display: grid;
+    grid-template-columns: 10fr 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 9fr;
+    grid-template-rows: 70px;
+}
+
+.keyboard__line_3 {
+    display: grid;
+    grid-template-columns: 10fr 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 9fr;
+    grid-template-rows: 70px;
+}
+
+.keyboard__line_4 {
+    display: grid;
+    grid-template-columns: 1fr 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px 70px;
+    grid-template-rows: 70px;
+}
+
+.keyboard__line_5 {
+    display: grid;
+    grid-template-columns: 1fr 70px 70px 4fr 70px 1fr 70px 70px 70px;
+    grid-template-rows: 70px;
+}
