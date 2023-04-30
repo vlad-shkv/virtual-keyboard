@@ -1,5 +1,6 @@
 let textContainer = document.createElement("textarea");
 textContainer.className = "textarea";
+textContainer.setAttribute("readonly", "readonly");
 
 document.body.append(textContainer);
 
@@ -40,72 +41,86 @@ let firstLineArray = [
     button1 = {
         content: "`",
         addContent: "~",
-        addClass: "darker"
+        addClass: "darker",
+        code: 'Backquote'
     },
 
     button2 = {
         content: "1",
         addContent: "!",
+        code: 'Digit1'
     },
 
     button3 = {
         content: "2",
         addContent: "@",
+        code: 'Digit2'
     },
 
     button4 = {
         content: "3",
         addContent: "#",
+        code: 'Digit3'
     },
 
     button5 = {
         content: "4",
         addContent: "$",
+        code: 'Digit4'
     },
 
     button6 = {
         content: "5",
         addContent: "%",
+        code: 'Digit5'
     },
 
     button7 = {
         content: "6",
         addContent: "^",
+        code: 'Digit6'
     },
 
     button8 = {
         content: "7",
         addContent: "&",
+        code: 'Digit7'
     },
 
     button9 = {
         content: "8",
         addContent: "*",
+        code: 'Digit8'
     },
 
     button10 = {
         content: "9",
         addContent: "(",
+        code: 'Digit9'
     },
 
     button11 = {
         content: "0",
         addContent: ")",
+        code: 'Digit0'
     },
 
     button12 = {
         content: "-",
         addContent: "_",
+        code: 'Minus'
     },
 
     button13 = {
         content: "=",
         addContent: "+",
+        code: 'Equal'
     },
 
     button14 = {
         content: "Backspace",
         addClass: "darker",
+        code: 'Backspace'
     },
 ];
 
@@ -130,77 +145,92 @@ for (let i = 0; i < firstLineArray.length; i++) {
 let secondLineArray = [
     button1 = {
         content: "Tab",
-        addClass: "darker"
+        addClass: "darker",
+        code: 'Tab'
     },
 
     button2 = {
         content: "q",
         addContent: "Q",
+        code: 'KeyQ'
     },
 
     button3 = {
         content: "w",
         addContent: "W",
+        code: 'KeyW'
     },
 
     button4 = {
         content: "e",
         addContent: "E",
+        code: 'KeyE'
     },
 
     button5 = {
         content: "r",
         addContent: "R",
+        code: 'KeyR'
     },
 
     button6 = {
         content: "t",
         addContent: "T",
+        code: 'KeyT'
     },
 
     button7 = {
         content: "y",
         addContent: "Y",
+        code: 'KeyY'
     },
 
     button8 = {
         content: "u",
         addContent: "U",
+        code: 'KeyU'
     },
 
     button9 = {
         content: "i",
         addContent: "I",
+        code: 'KeyI'
     },
 
     button10 = {
         content: "o",
         addContent: "O",
+        code: 'KeyO'
     },
 
     button11 = {
         content: "p",
         addContent: "P",
+        code: 'KeyP'
     },
 
     button12 = {
         content: "[",
         addContent: "{",
+        code: 'BracketLeft'
     },
 
     button13 = {
         content: "]",
         addContent: "}",
+        code: 'BracketRight'
     },
 
     button14 = {
         content: "\\",
         addContent: "/",
+        code: 'Backslash'
     },
 
     button15 = {
         content: "DEL",
         addClass: "darker",
+        code: "Delete"
     },
 ];
 
@@ -225,67 +255,80 @@ for (let i = 0; i < secondLineArray.length; i++) {
 let thirdLineArray = [
     button1 = {
         content: "Caps Lock",
-        addClass: "darker"
+        addClass: "darker",
+        code: "CapsLock"
     },
 
     button2 = {
         content: "a",
         addContent: "A",
+        code: 'KeyA'
     },
 
     button3 = {
         content: "s",
         addContent: "S",
+        code: 'KeyS'
     },
 
     button4 = {
         content: "d",
         addContent: "D",
+        code: 'KeyD'
     },
 
     button5 = {
         content: "f",
         addContent: "F",
+        code: 'KeyF'
     },
 
     button6 = {
         content: "g",
         addContent: "G",
+        code: 'KeyG'
     },
 
     button7 = {
         content: "h",
         addContent: "H",
+        code: 'KeyH'
     },
 
     button8 = {
         content: "j",
         addContent: "J",
+        code: 'KeyJ'
     },
 
     button9 = {
         content: "k",
         addContent: "K",
+        code: 'KeyK'
     },
 
     button10 = {
         content: "l",
         addContent: "L",
+        code: 'KeyL'
     },
 
     button11 = {
         content: ";",
         addContent: ":",
+        code: 'Semicolon'
     },
 
     button12 = {
         content: "'",
         addContent: "\"",
+        code: 'Quote'
     },
 
     button13 = {
         content: "ENTER",
-        addClass: "darker"
+        addClass: "darker",
+        code: 'Enter'
     },
 ];
 
@@ -310,72 +353,86 @@ for (let i = 0; i < thirdLineArray.length; i++) {
 let fourthLineArray = [
     button1 = {
         content: "Shift",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ShiftLeft"
     },
 
     button2 = {
         content: "\\",
         addContent: "|",
+        code: 'IntlBackslash'
     },
 
     button3 = {
         content: "z",
         addContent: "Z",
+        code: 'KeyZ'
     },
 
     button4 = {
         content: "x",
         addContent: "X",
+        code: 'KeyX'
     },
 
     button5 = {
         content: "c",
         addContent: "C",
+        code: 'KeyC'
     },
 
     button6 = {
         content: "v",
         addContent: "V",
+        code: 'KeyV'
     },
 
     button7 = {
         content: "b",
         addContent: "B",
+        code: 'KeyB'
     },
 
     button8 = {
         content: "n",
         addContent: "N",
+        code: 'KeyN'
     },
 
     button9 = {
         content: "m",
         addContent: "M",
+        code: 'KeyM'
     },
 
     button10 = {
         content: ",",
         addContent: "<",
+        code: 'Comma'
     },
 
     button11 = {
         content: ".",
         addContent: ">",
+        code: 'Period'
     },
 
     button12 = {
         content: "/",
         addContent: "?",
+        code: 'Slash'
     },
 
     button13 = {
         content: "↑",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ArrowUp"
     },
 
     button14 = {
         content: "Shift",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ShiftRight"
     },
 ];
 
@@ -400,46 +457,55 @@ for (let i = 0; i < fourthLineArray.length; i++) {
 let fifthLineArray = [
     button1 = {
         content: "Ctrl",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ControlLeft"
     },
 
     button2 = {
         content: "Win",
-        addClass: "darker"
+        addClass: "darker",
+        code: "MetaLeft"
     },
 
     button3 = {
         content: "Alt",
-        addClass: "darker"
+        addClass: "darker",
+        code: "AltLeft"
     },
 
     button4 = {
         content: " ",
+        code: 'Space'
     },
 
     button5 = {
         content: "Alt",
-        addClass: "darker"
+        addClass: "darker",
+        code: 'AltRight'
     },
 
     button6 = {
         content: "Ctrl",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ControlRight"
     },
 
     button7 = {
         content: "←",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ArrowLeft"
     },
 
     button8 = {
         content: "↓",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ArrowDown"
     },
 
     button9 = {
         content: "→",
-        addClass: "darker"
+        addClass: "darker",
+        code: "ArrowRight"
     },
 ];
 
@@ -460,3 +526,25 @@ for (let i = 0; i < fifthLineArray.length; i++) {
 
     document.querySelector(".keyboard__line_5").append(key);
 }
+
+
+document.addEventListener('keypress', function (whatKey) {
+    console.log(whatKey);
+})
+
+document.addEventListener('keydown', function (whatKey) {
+    console.log(whatKey.code);
+    for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
+        if (whatKey.code === step.code) {
+            if (step.content.length === 1) {
+                document.querySelector(".textarea").innerHTML += step.content;
+            } else {
+                if (whatKey.code === "Backspace") {
+                    let cur = document.querySelector(".textarea").innerHTML.split('');
+                    cur.pop();
+                    document.querySelector(".textarea").innerHTML = cur.join('');
+                }
+            }
+        }
+    }
+})
