@@ -532,13 +532,7 @@ for (let i = 0; i < fifthLineArray.length; i++) {
     document.querySelector(".keyboard__line_5").append(key);
 }
 
-
-document.addEventListener('keypress', function (whatKey) {
-    console.log(whatKey);
-})
-
 document.addEventListener('keydown', function (whatKey) {
-    console.log(whatKey.code);
     for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
         if (whatKey.code === step.code) {
             document.querySelector(`.${step.code}`).classList.add('active');
@@ -556,10 +550,31 @@ document.addEventListener('keydown', function (whatKey) {
 })
 
 document.addEventListener('keyup', function (whatKey) {
-    console.log(whatKey.code);
     for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
         if (whatKey.code === step.code) {
             document.querySelector(`.${step.code}`).classList.remove('active');
         }
     }
 })
+
+
+for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
+    document.querySelector(`.${step.code}`).addEventListener('mousedown', () => {
+        document.querySelector(`.${step.code}`).classList.add('active');
+        if (step.content.length === 1) {
+            document.querySelector(".textarea").innerHTML += step.content;
+        } else {
+            if (step.code === "Backspace") {
+                let cur = document.querySelector(".textarea").innerHTML.split('');
+                cur.pop();
+                document.querySelector(".textarea").innerHTML = cur.join('');
+            }
+        }
+    })
+}
+
+for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
+    document.querySelector(`.${step.code}`).addEventListener('mouseup', () => {
+        document.querySelector(`.${step.code}`).classList.remove('active');
+    })
+}

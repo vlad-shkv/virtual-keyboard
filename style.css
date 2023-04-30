@@ -38,6 +38,8 @@ body {
     background-color: gray;
     color: whitesmoke;
     transition: all 0.1s;
+    user-select: none;
+    cursor: pointer;
 }
 
 .keyboard__line__key::before {
