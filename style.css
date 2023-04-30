@@ -22,14 +22,14 @@ body {
 .keyboard {
     display: flex;
     width: 1240px;
-    gap: 10px;
+    gap: 20px;
     margin: 0 auto;
     margin-top: 50px;
     flex-direction: column;
 }
 
 .keyboard__line__key {
-    border: 1px solid rgb(90, 90, 90);
+    border: 0px solid gray;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -37,6 +37,17 @@ body {
     position: relative;
     background-color: gray;
     color: whitesmoke;
+    transition: all 0.1s;
+}
+
+.keyboard__line__key::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 0 0 0px #aaaaaa, 0 6px 0 #747474;
+    transition: all 0.5s;
 }
 
 .keyboard__line__key_dark {
@@ -83,4 +94,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 70px 70px 4fr 70px 1fr 70px 70px 70px;
     grid-template-rows: 70px;
+}
+
+.active {
+    background-color: rgb(87, 87, 161);
+    transform: translateY(8px);
 }

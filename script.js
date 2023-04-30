@@ -131,11 +131,12 @@ for (let i = 0; i < firstLineArray.length; i++) {
 
     let keyS = document.createElement("div");
     keyS.className = "keyboard__line__key_second";
+    key.classList.add(`${firstLineArray[i].code}`);
     if (firstLineArray[i].addContent) {
         keyS.innerHTML = firstLineArray[i].addContent;
     }
     if (firstLineArray[i].addClass) {
-        key.classList.add("keyboard__line__key_dark")
+        key.classList.add("keyboard__line__key_dark");
     }
     key.append(keyS);
 
@@ -241,11 +242,12 @@ for (let i = 0; i < secondLineArray.length; i++) {
 
     let keyS = document.createElement("div");
     keyS.className = "keyboard__line__key_second";
+    key.classList.add(`${secondLineArray[i].code}`);
     if (secondLineArray[i].addContent) {
         keyS.innerHTML = secondLineArray[i].addContent;
     }
     if (secondLineArray[i].addClass) {
-        key.classList.add("keyboard__line__key_dark")
+        key.classList.add("keyboard__line__key_dark");
     }
     key.append(keyS);
 
@@ -339,11 +341,12 @@ for (let i = 0; i < thirdLineArray.length; i++) {
 
     let keyS = document.createElement("div");
     keyS.className = "keyboard__line__key_second";
+    key.classList.add(`${thirdLineArray[i].code}`);
     if (thirdLineArray[i].addContent) {
         keyS.innerHTML = thirdLineArray[i].addContent;
     }
     if (thirdLineArray[i].addClass) {
-        key.classList.add("keyboard__line__key_dark")
+        key.classList.add("keyboard__line__key_dark");
     }
     key.append(keyS);
 
@@ -443,11 +446,12 @@ for (let i = 0; i < fourthLineArray.length; i++) {
 
     let keyS = document.createElement("div");
     keyS.className = "keyboard__line__key_second";
+    key.classList.add(`${fourthLineArray[i].code}`);
     if (fourthLineArray[i].addContent) {
         keyS.innerHTML = fourthLineArray[i].addContent;
     }
     if (fourthLineArray[i].addClass) {
-        key.classList.add("keyboard__line__key_dark")
+        key.classList.add("keyboard__line__key_dark");
     }
     key.append(keyS);
 
@@ -516,11 +520,12 @@ for (let i = 0; i < fifthLineArray.length; i++) {
 
     let keyS = document.createElement("div");
     keyS.className = "keyboard__line__key_second";
+    key.classList.add(`${fifthLineArray[i].code}`);
     if (fifthLineArray[i].addContent) {
         keyS.innerHTML = fifthLineArray[i].addContent;
     }
     if (fifthLineArray[i].addClass) {
-        key.classList.add("keyboard__line__key_dark")
+        key.classList.add("keyboard__line__key_dark");
     }
     key.append(keyS);
 
@@ -536,6 +541,7 @@ document.addEventListener('keydown', function (whatKey) {
     console.log(whatKey.code);
     for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
         if (whatKey.code === step.code) {
+            document.querySelector(`.${step.code}`).classList.add('active');
             if (step.content.length === 1) {
                 document.querySelector(".textarea").innerHTML += step.content;
             } else {
@@ -545,6 +551,15 @@ document.addEventListener('keydown', function (whatKey) {
                     document.querySelector(".textarea").innerHTML = cur.join('');
                 }
             }
+        }
+    }
+})
+
+document.addEventListener('keyup', function (whatKey) {
+    console.log(whatKey.code);
+    for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
+        if (whatKey.code === step.code) {
+            document.querySelector(`.${step.code}`).classList.remove('active');
         }
     }
 })
