@@ -544,6 +544,9 @@ document.addEventListener('keydown', function (whatKey) {
                     cur.pop();
                     document.querySelector(".textarea").innerHTML = cur.join('');
                 }
+                if (step.code === 'Enter') {
+                    let cur = document.querySelector(".textarea").innerHTML += '\n';
+                }
             }
         }
     }
@@ -568,6 +571,9 @@ for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...f
                 let cur = document.querySelector(".textarea").innerHTML.split('');
                 cur.pop();
                 document.querySelector(".textarea").innerHTML = cur.join('');
+            }
+            if (step.code === 'Enter') {
+                let cur = document.querySelector(".textarea").innerHTML += '\n';
             }
         }
     })
