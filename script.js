@@ -428,6 +428,7 @@ let fourthLineArray = [
 
     button13 = {
         content: "↑",
+        addContent: "↑",
         addClass: "darker",
         code: "ArrowUp"
     },
@@ -479,6 +480,7 @@ let fifthLineArray = [
 
     button4 = {
         content: " ",
+        addContent: " ",
         code: 'Space'
     },
 
@@ -496,18 +498,21 @@ let fifthLineArray = [
 
     button7 = {
         content: "←",
+        addContent: "←",
         addClass: "darker",
         code: "ArrowLeft"
     },
 
     button8 = {
         content: "↓",
+        addContent: "↓",
         addClass: "darker",
         code: "ArrowDown"
     },
 
     button9 = {
         content: "→",
+        addContent: "→",
         addClass: "darker",
         code: "ArrowRight"
     },
@@ -532,12 +537,18 @@ for (let i = 0; i < fifthLineArray.length; i++) {
     document.querySelector(".keyboard__line_5").append(key);
 }
 
+isCtrl = false;
+
 document.addEventListener('keydown', function (whatKey) {
     for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...fourthLineArray, ...fifthLineArray]) {
         if (whatKey.code === step.code) {
             document.querySelector(`.${step.code}`).classList.add('active');
             if (step.content.length === 1) {
-                document.querySelector(".textarea").innerHTML += step.content;
+                if (document.querySelector(".ShiftLeft").classList.contains('active') || document.querySelector(".ShiftRight").classList.contains('active') || isCtrl === true) {
+                    document.querySelector(".textarea").innerHTML += step.addContent;
+                } else {
+                    document.querySelector(".textarea").innerHTML += step.content;
+                }
             } else {
                 if (whatKey.code === "Backspace") {
                     let cur = document.querySelector(".textarea").innerHTML.split('');
@@ -546,6 +557,13 @@ document.addEventListener('keydown', function (whatKey) {
                 }
                 if (step.code === 'Enter') {
                     let cur = document.querySelector(".textarea").innerHTML += '\n';
+                }
+                if (step.code === "CapsLock") {
+                    if (isCtrl === false) {
+                        isCtrl = true;
+                    } else {
+                        isCtrl = false;
+                    }
                 }
             }
         }
@@ -565,7 +583,11 @@ for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...f
     document.querySelector(`.${step.code}`).addEventListener('mousedown', () => {
         document.querySelector(`.${step.code}`).classList.add('active');
         if (step.content.length === 1) {
-            document.querySelector(".textarea").innerHTML += step.content;
+            if (document.querySelector(".ShiftLeft").classList.contains('active') || document.querySelector(".ShiftRight").classList.contains('active') || isCtrl === true) {
+                document.querySelector(".textarea").innerHTML += step.addContent;
+            } else {
+                document.querySelector(".textarea").innerHTML += step.content;
+            }
         } else {
             if (step.code === "Backspace") {
                 let cur = document.querySelector(".textarea").innerHTML.split('');
@@ -574,6 +596,13 @@ for (let step of [...firstLineArray, ...secondLineArray, ...thirdLineArray, ...f
             }
             if (step.code === 'Enter') {
                 let cur = document.querySelector(".textarea").innerHTML += '\n';
+            }
+            if (step.code === "CapsLock") {
+                if (isCtrl === false) {
+                    isCtrl === true;
+                } else {
+                    isCtrl === false;
+                }
             }
         }
     })
