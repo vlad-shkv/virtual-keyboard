@@ -40,7 +40,7 @@ document.body.querySelector(".keyboard").append(keyLine5);
 let firstLineArray = [
     button1 = {
         content: "`",
-        addContent: "~",
+        addContent: '~',
         addClass: "darker",
         code: 'Backquote'
     },
